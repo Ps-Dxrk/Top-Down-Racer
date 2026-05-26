@@ -1,0 +1,3 @@
+/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/RaceGame.dir
+/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/edit_cache.dir
+/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/psdxrk/Documents/codefiles/C++ software renderer/build",
+  "command": "/usr/bin/g++ -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/Include\" -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/src\" -g -std=gnu++20 -g -O3 -o CMakeFiles/RaceGame.dir/src/main.cpp.o -c \"/home/psdxrk/Documents/codefiles/C++ software renderer/src/main.cpp\"",
+  "file": "/home/psdxrk/Documents/codefiles/C++ software renderer/src/main.cpp",
+  "output": "/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/RaceGame.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/psdxrk/Documents/codefiles/C++ software renderer/build",
+  "command": "/usr/bin/g++ -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/Include\" -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/src\" -g -std=gnu++20 -g -O3 -o CMakeFiles/RaceGame.dir/src/Game/Game.cpp.o -c \"/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Game.cpp\"",
+  "file": "/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Game.cpp",
+  "output": "/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/RaceGame.dir/src/Game/Game.cpp.o"
+},
+{
+  "directory": "/home/psdxrk/Documents/codefiles/C++ software renderer/build",
+  "command": "/usr/bin/g++ -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/Include\" -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/src\" -g -std=gnu++20 -g -O3 -o CMakeFiles/RaceGame.dir/src/Game/Assets/AssetLoad.cpp.o -c \"/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Assets/AssetLoad.cpp\"",
+  "file": "/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Assets/AssetLoad.cpp",
+  "output": "/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/RaceGame.dir/src/Game/Assets/AssetLoad.cpp.o"
+},
+{
+  "directory": "/home/psdxrk/Documents/codefiles/C++ software renderer/build",
+  "command": "/usr/bin/g++ -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/Include\" -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/src\" -g -std=gnu++20 -g -O3 -o CMakeFiles/RaceGame.dir/src/Game/Car/Car.cpp.o -c \"/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Car/Car.cpp\"",
+  "file": "/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Car/Car.cpp",
+  "output": "/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/RaceGame.dir/src/Game/Car/Car.cpp.o"
+},
+{
+  "directory": "/home/psdxrk/Documents/codefiles/C++ software renderer/build",
+  "command": "/usr/bin/g++ -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/Include\" -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/src\" -g -std=gnu++20 -g -O3 -o CMakeFiles/RaceGame.dir/src/Game/Road/Road.cpp.o -c \"/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Road/Road.cpp\"",
+  "file": "/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/Road/Road.cpp",
+  "output": "/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/RaceGame.dir/src/Game/Road/Road.cpp.o"
+},
+{
+  "directory": "/home/psdxrk/Documents/codefiles/C++ software renderer/build",
+  "command": "/usr/bin/g++ -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/Include\" -I\"/home/psdxrk/Documents/codefiles/C++ software renderer/src\" -g -std=gnu++20 -g -O3 -o CMakeFiles/RaceGame.dir/src/Game/UI/UI.cpp.o -c \"/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/UI/UI.cpp\"",
+  "file": "/home/psdxrk/Documents/codefiles/C++ software renderer/src/Game/UI/UI.cpp",
+  "output": "/home/psdxrk/Documents/codefiles/C++ software renderer/build/CMakeFiles/RaceGame.dir/src/Game/UI/UI.cpp.o"
+}
+]
