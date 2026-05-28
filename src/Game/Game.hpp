@@ -11,6 +11,7 @@
 #include "Car/Car.hpp"
 #include "Assets/AssetLoad.hpp"
 
+#include "Settings.hpp"
 #include "Road/Road.hpp"
 #include "GameStates.hpp"
 #include "UI/UI.hpp"
@@ -44,6 +45,9 @@ class Game{
 
     //score logic
     void PlayerCarScorePass();
+
+    //resetting game
+    void Reset();
 
     void Update();
     void Render(Renderer* renderer);

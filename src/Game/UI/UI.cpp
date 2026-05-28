@@ -13,26 +13,49 @@ UI::UI(){
     //main title
     this->MainTitleTextTex = Assets::getTexture(UI_MAIN_TITLE_TEX);
 
-    //UI buttons
-    this->PlayButton = std::make_unique<Button>(100.0f, 430.0f, 55.0f, 55.0f, Assets::getTexture(UI_PLAY_BUTTON));
-    this->ExitButton = std::make_unique<Button>(240.0f, 430.0f, 55.0f, 55.0f, Assets::getTexture(UI_EXIT_BUTTON));
+    //game over text
+    this->GameOverTextTex = Assets::getTexture(UI_GAME_OVER_TEXT_TEX);
 
+    //UI buttons
+    this->PlayButtonMenu = std::make_unique<Button>(100.0f, 430.0f, 55.0f, 55.0f, Assets::getTexture(UI_PLAY_BUTTON));
+    this->ExitButtonMenu = std::make_unique<Button>(240.0f, 430.0f, 55.0f, 55.0f, Assets::getTexture(UI_EXIT_BUTTON));
+    this->RetryButtonGameOver = std::make_unique<Button>(Settings::getWindowWidth() / 2.0f - 70.0f, Settings::getWindowHeight() / 2.0f + 40.0f, 
+                                                    55.0f, 55.0f, Assets::getTexture(UI_RETRY_BUTTON));
+    this->ExitButtonGameOver = std::make_unique<Button>(Settings::getWindowWidth() / 2.0f + 10.0f, Settings::getWindowHeight() / 2.0f + 40.0f,
+                                                    55.0f, 55.0f, Assets::getTexture(UI_EXIT_BUTTON));
 }
 
 void UI::Update(){
 
-   if(GameStates::game_menu){
+    if(GameStates::game_menu){
         // Play button update
-        if(this->PlayButton->checkClicked()) GameStates::game_menu = false;
-        this->PlayButton->Update();
+        if(this->PlayButtonMenu->checkClicked()) GameStates::game_menu = false;
+        this->PlayButtonMenu->Update();
 
         //exit button update
-        if(this->ExitButton->checkClicked()) GameStates::game_running = false;
-        this->ExitButton->Update();
-   }
+        if(this->ExitButtonMenu->checkClicked()) GameStates::game_running = false;
+        this->ExitButtonMenu->Update();
+    }
 
-    if(Input::GetMouseButton(Button1) && !leftMouseclicked) leftMouseclicked = true;
-    else if(!Input::GetMouseButton(Button1)) leftMouseclicked = false;
+    if(GameStates::game_over){
+        //RETRY BUTTON update
+        if(this->RetryButtonGameOver->checkClicked()){
+            GameStates::game_over = false;
+            GameStates::game_restart = true;    
+        }
+        this->RetryButtonGameOver->Update();
+
+        //exit button update
+        if(this->ExitButtonGameOver->checkClicked()){
+            GameStates::game_menu = true;
+            GameStates::game_over = false;
+            GameStates::game_restart = true;
+        }
+        this->ExitButtonGameOver->Update();
+    }
+
+    if(Input::GetMouseButton(Button1)) leftMouseclicked = true;
+    if(!Input::GetMouseButton(Button1)) leftMouseclicked = false;
 
 }
 
@@ -46,13 +69,28 @@ void UI::Render(Renderer* renderer){
         renderer->drawTexture(this->MainTitleTextTex, &menuTitleTexDrawRect);
 
         //rendering buttons
-        this->PlayButton->Render(renderer);
-        this->ExitButton->Render(renderer);
+        this->PlayButtonMenu->Render(renderer);
+        this->ExitButtonMenu->Render(renderer);
+
+    }
+
+    if(GameStates::game_over){
+        //background
+        XFRect gameOverBgRect{0.0f, 0.0f, static_cast<float>(Settings::getWindowWidth()), static_cast<float>(Settings::getWindowHeight())};
+        renderer->drawRect(&gameOverBgRect, 128, 128, 128, 50);
+
+        //gameovertexttex
+        XFRect gameoverTextDrawRect{93.0f, 200.0f, 210.0f, 50.0f};
+        renderer->drawTexture(this->GameOverTextTex, &gameoverTextDrawRect);
+
+        //drawing buttons
+        this->RetryButtonGameOver->Render(renderer);
+        this->ExitButtonGameOver->Render(renderer);
 
     }
 }
 
-/************************************************************************************ */
+/**************************************************************************************/
 
 //buton definition
 Button::Button(float x, float y, float w, float h, Texture* tex) : x(x), y(y), w(w), h(h), texture(tex), inX(x), inY(y), inW(w), inH(h){
@@ -66,6 +104,7 @@ bool Button::checkClicked(){
     if(Input::GetMouseButton(Button1) && !leftMouseclicked && !this->clicked && MouseButtonCollision(Input::GetMouseX(), Input::GetMouseY(), &collisionRect)){
         this->clicked = true;
         leftMouseclicked = true;
+        this->hoverAniT = 0.0f;
         return true;
     }
 

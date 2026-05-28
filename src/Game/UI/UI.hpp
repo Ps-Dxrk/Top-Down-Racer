@@ -12,6 +12,7 @@
 
 #include "Game/Assets/AssetLoad.hpp"
 #include "Game/GameStates.hpp"
+#include "Game/Settings.hpp"
 
 class Button{
 
@@ -41,10 +42,15 @@ class UI {
     //title text texture
     Texture* MainTitleTextTex{};
 
+    //game over text
+    Texture* GameOverTextTex{};
+
 
     //UI buttons
-    std::unique_ptr<Button> PlayButton{};
-    std::unique_ptr<Button> ExitButton{};
+    std::unique_ptr<Button> PlayButtonMenu{};
+    std::unique_ptr<Button> ExitButtonMenu{};
+    std::unique_ptr<Button> RetryButtonGameOver{};
+    std::unique_ptr<Button> ExitButtonGameOver{};
 
     public:
     UI();

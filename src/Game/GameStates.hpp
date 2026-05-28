@@ -7,7 +7,7 @@ class GameStates {
 
     public:
 
-    static inline bool game_active{}, game_running{}, game_menu{true}, game_paused{}, game_over{};
+    static inline bool game_active{}, game_running{}, game_menu{true}, game_paused{}, game_over{}, game_restart{};
 
     static inline int score{};
     

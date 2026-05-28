@@ -11,6 +11,8 @@ void Assets::Init(){
     Assets::textures.emplace_back("res//UI//Buttons//PlayButton.png"); //tex_index = 6(UI_PLAY_BUTTON);
     Assets::textures.emplace_back("res//UI//Buttons//PauseButton.png"); //tex_index = 7(UI_PAUSE_BUTTON);
     Assets::textures.emplace_back("res//UI//Buttons//ExitButton.png"); //tex_index = 8(UI_EXIT_BUTTON);
+    Assets::textures.emplace_back("res//UI//Buttons//RetryButton.png"); //tex_index = 9(UI_RETRY_BUTTON);
+    Assets::textures.emplace_back("res//UI//Game_Over_Text.png"); //tex_index = 10(UI_GAME_OVER_TEXT_TEX);
 
 }
 

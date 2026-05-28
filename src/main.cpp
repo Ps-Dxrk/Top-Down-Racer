@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <thread>
 
+#include "Game/Settings.hpp"
+
 #include "SoftwareRenderer/Clock.hpp"
 #include "SoftwareRenderer/Window.hpp"
 #include "SoftwareRenderer/XRenderer.hpp"
@@ -20,8 +22,11 @@ int main(){
 
     Clock::Initialize(); //initalizing the clock
 
-    wWindow window("X11 Software Renderer", 400, 640, nullptr);
+    int window_width{400}, window_height{640};
+    wWindow window("X11 Software Renderer", window_width, window_height, nullptr);
     Renderer renderer(&window);
+
+    Settings::setWindowParams(window_width, window_height);
 
     //game stuff
     Game game;
@@ -51,7 +56,6 @@ int main(){
         //event polling
         window.EventPolling();
         if(window.checkWindowClose()) GameStates::game_running = false;
-
 
         //update delta timer
         while(deltaU >= updateTime){    

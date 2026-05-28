@@ -17,7 +17,7 @@ class Renderer {
     std::vector<uint32_t> pixelBuffer{}; //raw pixel buffer on memory
 
     Visual* visual{}; //tells X_Image how to use the color values according to the current display
-    XImage* x_image{};
+    XImage* x_image{}; //the image that we write the color values into;
 
     public:
     Renderer(wWindow* win) : win(win){
@@ -118,11 +118,11 @@ class Renderer {
             }
         }
     }
-    void drawRect(const XRect* rect, uint32_t color){
+    void drawRect(const XFRect* rect, uint8_t r, uint8_t g, uint8_t b, uint8_t a){
 
-        for(int i = rect->y; i < rect->y + rect->h; ++i){
-            for(int j = rect->x; j < rect->x + rect->w; ++j){
-                this->PutPixelAlpha(j, i, color);
+        for(int i = rect->y; i < static_cast<int>(rect->y + rect->h); ++i){
+            for(int j = rect->x; j < static_cast<int>(rect->x + rect->w); ++j){
+                this->PutPixelAlpha(j, i, this->colorCode(r, g, b, a));
             }
         }
     }
@@ -133,10 +133,10 @@ class Renderer {
             }
         }
     }
-    void drawRect(int x, int y, int w, int h, uint32_t color){
-        for(int i = y; i < y + h; ++i){
-            for(int j = x; j < x + w; ++j){
-                this->PutPixelAlpha(j, i, color);
+    void drawRect(float x, float y, float w, float h, uint8_t r, uint8_t g, uint8_t b, uint8_t a){
+        for(int i = y; i < static_cast<int>(y + h); ++i){
+            for(int j = x; j < static_cast<int>(x + w); ++j){
+                this->PutPixelAlpha(j, i, this->colorCode(r, g, b, a));
             }
         }
     }

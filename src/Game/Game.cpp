@@ -17,10 +17,10 @@ Game::Game(){
     //cars
 
     //player car
-    this->playerCar = std::make_unique<PlayerCar>(177.0f, 540.0f, 40.0f, 80.0f, 1.5f, Assets::getTexture(CAR_TEX_AUDI));
+    this->playerCar = std::make_unique<PlayerCar>(177.0f, Settings::getWindowHeight() - 100.0f, 40.0f, 80.0f, 1.5f, Assets::getTexture(CAR_TEX_AUDI));
 
     //road 
-    this->road = std::make_unique<Road>(0.0f, 0.0f, 400.0f, 220.0f, Assets::getTexture(TEX_DESERT_ROAD));
+    this->road = std::make_unique<Road>(0.0f, 0.0f, static_cast<float>(Settings::getWindowWidth()), 220.0f, Assets::getTexture(TEX_DESERT_ROAD));
 
     //UI
     this->ui = std::make_unique<UI>();
@@ -102,7 +102,7 @@ void Game::PlayerCarCollision(){
         XFRect BaseCarColRect{c->GetX() + 5.0f, c->GetY() + 5.0f, c->GetW() - 10.0f, c->GetH() - 10.0f};
         if(this->collisionCheck(&PlayerCarColRect, &BaseCarColRect) && !c->getCollided()){
             c->setCollided(true);
-            //GameStates::game_running = false;
+            GameStates::game_over = true;
         }
     }
 
@@ -130,10 +130,22 @@ void Game::PlayerCarScorePass(){
 
 }
 
+void Game::Reset(){
+
+    this->base_cars.clear();
+
+    //resetting the player car
+    this->playerCar.reset();
+    this->playerCar = std::make_unique<PlayerCar>(177.0f, Settings::getWindowHeight() - 100.0f, 40.0f, 80.0f, 1.5f, Assets::getTexture(CAR_TEX_AUDI));
+
+    GameStates::game_restart = false;
+
+}
+
 void Game::Update(){
 
     //road shit
-    this->road->Update();
+    if(!GameStates::game_over) this->road->Update();
 
    if(!GameStates::game_menu && !GameStates::game_over && !GameStates::game_paused){
         //car shit
@@ -152,6 +164,8 @@ void Game::Update(){
 
     //UI update
     this->ui->Update();
+
+    if(GameStates::game_restart) this->Reset();
 }
 
 void Game::Render(Renderer* renderer){

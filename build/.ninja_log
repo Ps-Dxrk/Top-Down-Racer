@@ -1,9 +1,9 @@
 # ninja log v7
 1	1965	1779298527376562436	CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o	22cb7eb4dcc27c1
-1	15714	1779734093319876021	CMakeFiles/RaceGame.dir/src/main.cpp.o	e1051e757cb0a45a
-2050	2163	1779734734269763243	RaceGame	12d6121d37ecac51
-1	2050	1779734732220715574	CMakeFiles/RaceGame.dir/src/Game/Game.cpp.o	29aed644e43f3cdf
-279	5054	1779537586637942691	CMakeFiles/RaceGame.dir/src/Game/Assets/AssetLoad.cpp.o	c3daecc898de2fd2
-6	5646	1779734093324876078	CMakeFiles/RaceGame.dir/src/Game/Car/Car.cpp.o	a649a53eb9294b0c
-9	1588	1779734235084495663	CMakeFiles/RaceGame.dir/src/Game/Road/Road.cpp.o	fa1ace6c043f9c56
-7	4985	1779734093327677568	CMakeFiles/RaceGame.dir/src/Game/UI/UI.cpp.o	991a1abef6bd7cbf
+13	11258	1779905032467713185	CMakeFiles/RaceGame.dir/src/main.cpp.o	e1051e757cb0a45a
+1848	1955	1779905422019243033	RaceGame	12d6121d37ecac51
+14	2362	1779905032468713199	CMakeFiles/RaceGame.dir/src/Game/Game.cpp.o	29aed644e43f3cdf
+352	3557	1779904257731152313	CMakeFiles/RaceGame.dir/src/Game/Assets/AssetLoad.cpp.o	c3daecc898de2fd2
+17	3087	1779904619096971025	CMakeFiles/RaceGame.dir/src/Game/Car/Car.cpp.o	a649a53eb9294b0c
+19	2499	1779904619097964306	CMakeFiles/RaceGame.dir/src/Game/Road/Road.cpp.o	fa1ace6c043f9c56
+1	1848	1779905420172216667	CMakeFiles/RaceGame.dir/src/Game/UI/UI.cpp.o	991a1abef6bd7cbf

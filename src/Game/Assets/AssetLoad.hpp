@@ -25,7 +25,11 @@ enum tex_index{
 
     UI_PAUSE_BUTTON,
 
-    UI_EXIT_BUTTON
+    UI_EXIT_BUTTON,
+
+    UI_RETRY_BUTTON,
+
+    UI_GAME_OVER_TEXT_TEX
 
 };
 
